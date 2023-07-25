@@ -22,12 +22,6 @@ python3 -m venv ovoslackrandomcoffee
 source ovoslackrandomcoffee/bin/activate
 #+end_src
 
-Then, install the required Python packages:
-
-#+begin_src bash
-pip install -r requirements.txt
-#+end_src
-
 You'll need a Slack API token (see https://api.slack.com/apps/) set in the environment as SLACK_API_TOKEN with appropriate scopes such as:
 
 - ~channel:history~,
