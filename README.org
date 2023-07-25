@@ -13,7 +13,7 @@ The bot will look back in the history of the channel and find past matches and u
 matches not seen before. By default, it looks back at the last 28 days of channel history.
 
 The slack app [[http://www.randomcoffees.com/][RandomCoffees]] did the exact same thing, but is no longer available and the alternatives cost $$. So here is a
-simple solution.
+simple solution:
 
 ** Setup
 
