@@ -2,7 +2,7 @@
 
 This is a fork of: [[https://tjansson60/pyslackrandomcoffee][tjansson60/pyslackrandomcoffee]]
 
-<p align="center"><img src="img/cutecoffee.jpg" /></p>
+#+html: <p align="center"><img src="img/cutecoffee.jpg" /></p>
 
 A very simple random coffee bot for slack that takes all the members in a channel and randomly matches them up for a
 coffee date and writes the matches back in the same channel.
