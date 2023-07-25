@@ -1,7 +1,5 @@
 #+title: OVO Slack RandomCoffee app
 
-* ovoslackrandomcoffee
-
 This is a fork of: [[https://tjansson60/pyslackrandomcoffee][tjansson60/pyslackrandomcoffee]]
 
 A very simple random coffee bot for slack that takes all the members in a channel and randomly matches them up for a
@@ -32,9 +30,9 @@ pip install -r requirements.txt
 
 You'll need a Slack API token (see https://api.slack.com/apps/) set in the environment as SLACK_API_TOKEN with appropriate scopes such as:
 
-- channel:history,
-- channels:read,
-- chat:write,
-- users:read.
+- ~channel:history~,
+- ~channels:read~,
+- ~chat:write~,
+- ~users:read~.
 
 This bot is intended to be deployed to AWS Lambda and triggered via API Gateway.
