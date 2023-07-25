@@ -1,4 +1,4 @@
-name: pyslackrandomcoffee
+name: ovoslackrandomcoffee
 channels:
   - conda-forge
   - defaults
