@@ -47,9 +47,10 @@ def main(event, context):
     members = get_channel_members(channel_id)
     if members is None:
         print("Failed to get channel members.")
-        return
+        return {"statusCode": 200, "body": "Failed to get channel members."}
     pairs = generate_pairs(members)
     post_pairs_to_channel(pairs, channel_id)
+    return {"statusCode": 200, "body": "Calculating..."}
 
 
 if __name__ == "__main__":
