@@ -6,7 +6,7 @@ from slack_sdk.errors import SlackApiError
 # Setup
 slack_token = os.getenv("SLACK_API_TOKEN")
 client = WebClient(token=slack_token)
-channel_id = "C05JRD20SEQ"  # replace with your channel ID
+channel_id = os.getenv("SLACK_CHANNEL_ID")
 
 
 def get_channel_members(channel_id):
