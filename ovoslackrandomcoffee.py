@@ -2,6 +2,7 @@ import os
 import random
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
+import time
 
 # Setup
 slack_token = os.getenv("SLACK_API_TOKEN")
@@ -22,6 +23,7 @@ def get_channel_members(channel_id):
 
 
 def generate_pairs(members):
+    random.seed(time.time())
     if len(members) < 2:
         print("Not enough members for a pair.")
         return None
@@ -41,7 +43,7 @@ def post_pairs_to_channel(pairs, channel_id):
             print(f"Error posting message: {e}")
 
 
-def main():
+def main(event, context):
     members = get_channel_members(channel_id)
     if members is None:
         print("Failed to get channel members.")
@@ -51,4 +53,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(None, None)
