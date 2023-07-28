@@ -7,7 +7,7 @@ import time
 # Setup
 slack_token = os.getenv("SLACK_API_TOKEN")
 client = WebClient(token=slack_token)
-channel_id = os.getenv("SLACK_CHANNEL_ID")
+channel_id = "C05JRD20SEQ"
 
 
 def get_channel_members(channel_id):
@@ -22,16 +22,9 @@ def get_channel_members(channel_id):
         return None
 
 
-def generate_pairs(members):
-    random.seed(time.time())
-    if len(members) < 2:
-        print("Not enough members for a pair.")
-        return None
-
-    # Randomly select two members for the pair
-    pair = random.sample(members, 2)
-
-    return [pair]
+def generate_all_pairs(members):
+    random.shuffle(members)
+    return [members[i : i + 2] for i in range(0, len(members), 2)]
 
 
 def post_pairs_to_channel(pairs, channel_id):
@@ -48,7 +41,7 @@ def main(event, context):
     if members is None:
         print("Failed to get channel members.")
         return {"statusCode": 200, "body": "Failed to get channel members."}
-    pairs = generate_pairs(members)
+    pairs = generate_all_pairs(members)
     post_pairs_to_channel(pairs, channel_id)
     return {"statusCode": 200, "body": "Calculating..."}
 
